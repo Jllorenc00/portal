@@ -1,0 +1,44 @@
+<div class="news-container">
+  
+  <section class="welcome-banner">
+    <p class="welcome-message">Bem-vindo ao Portal Senac</p>
+  </section>
+
+  <section class="latest-news">
+    <article class="highlighted-news">
+      <a class="news-item" (click)="abrirDetalhes(ultimaNoticia?.id)" title="Leia mais sobre {{ ultimaNoticia?.titulo }}">
+        <div class="highlight-icon">
+          <i class="fa fa-star"></i>
+        </div>
+        <img 
+          class="news-image" 
+          [src]="ultimaNoticia?.imagem_url || 'assets/default-image.jpg'" 
+          [alt]="ultimaNoticia?.titulo || 'Última notícia sem imagem disponível'" 
+        />
+        <div class="news-content">
+          <h4 class="news-title">{{ ultimaNoticia?.titulo || 'Título indisponível' }}</h4>
+          <p class="news-body">{{ ultimaNoticia?.corpo || 'Conteúdo não disponível no momento.' }}</p>
+        </div>
+      </a>
+    </article>
+  </section>
+
+  <hr class="divider">
+
+  <section class="news-list">
+    <article *ngFor="let noticia of noticia$">
+      <a class="news-item" (click)="abrirDetalhes(noticia?.id)" title="Leia mais sobre {{ noticia?.titulo }}">
+        <img 
+          class="news-image" 
+          [src]="noticia?.imagem_url || 'assets/default-image.jpg'" 
+          [alt]="noticia?.titulo || 'Notícia sem imagem disponível'" 
+        />
+        <div class="news-content">
+          <h4 class="news-title">{{ noticia?.titulo || 'Título indisponível' }}</h4>
+          <p class="news-body">{{ noticia?.corpo || 'Conteúdo não disponível no momento.' }}</p>
+        </div>
+      </a>
+    </article>
+  </section>
+
+</div>

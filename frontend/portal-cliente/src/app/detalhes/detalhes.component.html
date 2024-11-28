@@ -1,0 +1,16 @@
+<div class="news-detail">
+  <div class="news-item">
+    <div class="news-image-container">
+      <img 
+        class="news-image" 
+        [src]="noticia?.imagem_url || 'assets/default-image.jpg'" 
+        [alt]="noticia?.titulo || 'Imagem não disponível'" 
+      />
+    </div>
+    
+    <div class="news-content">
+      <h1 class="news-detail-title">{{ noticia?.titulo || 'Título indisponível' }}</h1>
+      <p class="news-detail-body">{{ noticia?.corpo || 'Conteúdo não disponível no momento.' }}</p>
+    </div>
+  </div>
+</div>
